@@ -21,27 +21,30 @@ end
 
 data = [
   [Spree.t(:billing_address), Spree.t(:shipping_address)], 
-  [address_info(bill_address), address_info(ship_address) + "\n\nvia #{@order.shipments.first.shipping_method.name}"]
+  [address_info(bill_address) + "\n#{@order.email}", address_info(ship_address) + "\n\nvia #{@order.shipments.first.shipping_method.name}"]
 ]
 
-move_down 75
+move_down 35
+
 table(data, :width => 540) do
   row(0).font_style = :bold
 
   # Billing address header
-  row(0).column(0).borders = [:top, :right, :bottom, :left]
+  row(0).column(0).borders = [:bottom]
   row(0).column(0).border_widths = [0.5, 0, 0.5, 0.5]
 
   # Shipping address header
-  row(0).column(1).borders = [:top, :right, :bottom, :left]
+  row(0).column(1).borders = [:bottom]
   row(0).column(1).border_widths = [0.5, 0.5, 0.5, 0]
 
   # Bill address information
-  row(1).column(0).borders = [:top, :right, :bottom, :left]
+  row(1).column(0).borders = []
   row(1).column(0).border_widths = [0.5, 0, 0.5, 0.5]
 
   # Ship address information
-  row(1).column(1).borders = [:top, :right, :bottom, :left]
+  row(1).column(1).borders = []
   row(1).column(1).border_widths = [0.5, 0.5, 0.5, 0]
 
 end
+
+

@@ -15,4 +15,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency('prawn', '1.0.0')
   s.add_dependency('spree_core', '~> 2.3.0')
+  s.add_dependency('barby')
 end
