@@ -200,12 +200,14 @@ table(data, :width => @column_widths.values.compact.sum, :column_widths => @colu
     extra_rows = row((-1-extra_row_count)..-1)
     extra_rows.columns(0..5).borders = []
     extra_rows.column(4).font_style = :bold
-    extra_rows.columns(0..5).padding = 1
+    extra_rows.columns(0..5).padding = [1, 5]
   end
 end
 
 
 horizontal_rule
+
+
 
 ##
 # Shipments
